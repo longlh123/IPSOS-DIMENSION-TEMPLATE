@@ -1,2 +1,5 @@
 # IPSOS-DIMENSION-TEMPLATE
 IPSOS DIMENSION TEMPLATE
+
+
+Template: VisualAssets.zip

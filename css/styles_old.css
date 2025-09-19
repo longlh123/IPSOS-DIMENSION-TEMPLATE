@@ -1,0 +1,301 @@
+/* variables */
+:root{
+	--primary: #FFC636;
+	--secondary: rgb(172, 172, 189);
+	--button-submit: #047AA8;
+}
+
+/* reset */
+body,p,a,ul,li{
+	margin: 0;
+	padding: 0;
+	text-decoration: none; /*thiết lập trang trí thêm cho text underline|overline|line-through|blink|inherit*/
+}
+
+li{list-style-type: none;}
+
+/* base styles */
+*{
+	box-sizing: border-box;
+}
+
+body{
+	display: grid;
+	grid-template-columns: 1fr;
+	min-height: 100%;
+	/*overflow: hidden;*/
+	font-size: 16px;
+	line-height: 2.0rem;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button{
+	background: none;
+	border: 1px solid var(--button-submit);
+	padding: 6px 12px;
+	border-radius: 2px;
+	text-transform: uppercase;
+	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6);
+	display: inline-block;
+}
+
+button:hover{
+	color: #222;
+	background: var(--secondary);
+}
+
+input[type="submit"]{
+	background: none;
+	display: inline-block;
+	border: 1px solid #047AA8;
+	background-color: #047AA8;
+	padding: 10px 12px;
+	font-size: 1rem;
+	font-weight: 500;
+	color: #fff;
+	line-height: 1.5;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: .25rem;
+	white-space: nowrap;
+	text-transform: uppercase;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input[type="submit"]:hover{
+	opacity: 0.8;
+}
+
+input[type="text"], textarea, select {
+	display: block;
+	width: 100%;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	padding: 12px 12px;
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.5;
+	border: 1px solid #aaa;
+	border-radius: 4px;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	border-radius: 0.5rem;
+	background-color: #fff;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus{
+	outline: none;
+}
+
+.cat-scales{
+	display: block;
+}
+
+.cat-scales-item input[type="radio"]{
+	display: none;
+}
+
+.cat-scales-item input[type="radio"] + label{
+	/*border: 1px solid #047AA8;*/
+	padding: 10px 20px;
+	display: block;
+	position: relative;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.cat-scales-item input[type="radio"] + label::before{
+
+	background-color: #fff;
+	color: #fff;
+	content: " ";
+	display: block;
+	border-radius: 50%;
+	border: 1px solid grey;
+	position: absolute;
+	top: 14px;
+	left: -13px;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 28px;
+}
+
+.cat-scales-item input[type="radio"]:checked + label::before{
+	background-color: #047AA8;
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+
+.cat-scales-item input[type="radio"]:focus + label::before{
+	outline: none;
+	border-color: #047AA8;
+}
+
+.cat-scales-item input[type="radio"]:disabled + label::before{
+	box-shadow: inset 0 0 0 4px #f4f4f4;
+  	border-color: #a6a6a6;
+  	background: #a6a6a6;
+}
+
+img{ width: 100%; }
+
+.error{
+	color: #a94442;
+	font-style: italic;
+	font-weight: 500;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 12px;
+}
+
+/* fonts */
+
+/* grid testing */
+
+.container{
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto 1fr auto;
+	grid-gap: 10px; /*Sets the gaps (gutters) between rows and columns*/
+	min-height: 100%;
+}
+
+.header, .content, .banner, .footer { 
+	grid-column: 1/1;
+}
+
+.header{grid-row: 1/1;}
+.banner{grid-row: 2/2;}
+.content{grid-row: 3/3;}
+.footer{grid-row: 4/4;}
+
+.header, .banner, .footer { display: flex; }
+
+.header, .footer{
+	align-items: center;
+	justify-content: center;
+}
+
+.content{ 
+	overflow-y: auto;
+	text-align: justify;
+}
+
+.footer{
+	padding: 15px 15px;
+	border-top: 1px solid rgb(1, 34, 71);
+}
+
+.row img{
+	width: 100%;
+}
+
+.cat-container{
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.cat-item{
+	border-bottom: 1px solid #f2f2f2;
+}
+
+/* mobile styles */
+.content, .banner{
+	padding: 15px 15px;
+}
+
+/* image modal */
+.modal-item:hover{
+	opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 100%;
+}
+
+/* Caption of Modal Image */
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* small tablet styles */
+@media screen and (min-width: 620px){
+
+	
+}
+
+/* large tablet & laptop styles*/
+@media screen and (min-width: 960px){
+
+	
+}
+
+/* desktop styles */
+@media screen and (min-width: 1200px){
+
+	.modal-content {
+		width: 700px;
+	}
+}

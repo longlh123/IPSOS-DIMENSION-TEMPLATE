@@ -1,0 +1,103 @@
+<mrSubTemplate>
+    <!--<mrRef RefType="script" RefPosition="head" type="text/javascript" language="javascript" src="https://images1.ipsosinteractive.com/ABC_VIETNAM_10072020/source_ipsos/js/VideoBasic.js">VIDEOBASIC SCRIPT</mrRef>-->
+	<!--<mrRef RefType="script" RefPosition="head" type="text/javascript" language="javascript" src="http://localhost/DimensionTemplate_v7/js/VideoBasic.js">VIDEOBASIC SCRIPT</mrRef>-->
+	
+    <div class = 'videobasic'>
+		<mrData QuestionElement = "Label" />
+        <!--
+        <div class='video_wrapper'>
+            <iframe id='player' frameborder='0' allow='autoplay; encrypted-media'></iframe>
+        </div>
+        -->
+        <mrData QuestionElement='Banner'> //Other Question Banners </mrData>
+	</div>
+    <div id="player"></div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        var mrNext = document.getElementsByName("_NNext");
+        var mrPrev = document.getElementsByName("_NPrev");
+
+        var objProperties = {};
+
+        document.addEventListener("DOMContentLoaded", function(){
+            var custom_question_properties = document.getElementsByClassName("custom_question_properties");
+            
+            if(custom_question_properties != null){
+                var str_obj = custom_question_properties[0].innerText;
+
+                objProperties = converJSON(str_obj);
+                custom_question_properties[0].parentNode.style.display = "none";
+            }
+
+            /*
+            obj = {
+                placeholder : "text", //a symbol or piece of text that temporarily replaces st that is missing. 
+                validation : "checkphonenumber", //the act of proving that st is true or correct
+                type : "text|long|double", 
+                questiontype : "TOM-SPON", //TOM-SPON: Using for the TOM_SPON question
+                videoid : "string", //Ma video tu Youtube
+                sum : value
+            }
+            */
+            function converJSON(s){
+                var obj = {};
+                
+                var a = s.split(',');
+
+                for(var i in a){
+                    var b = a[i].split(':');
+                    obj[b[0].toLowerCase()] = b[1];
+                }
+
+                //set the default value of type of a text field is 'text'.
+                if(!obj.hasOwnProperty('type')) obj['type'] = 'text';
+                //set the default value of type of a questiontype is default
+                if(!obj.hasOwnProperty('questiontype')) obj['questiontype'] = 'default';
+                //set the default value of validation is null.
+                if(!obj.hasOwnProperty('validation')) obj['validation'] = null;
+                //set the default value of placeholder
+                if(!obj.hasOwnProperty('placeholder')) obj['placeholder'] = 'Điền câu trả lời...'
+                //set the default value of step
+                if(!obj.hasOwnProperty('step')) obj['step'] = 1
+
+                return obj;
+            }
+        });
+
+        var player; 
+
+        //youtube function - onYouTubeIframeAPIReady
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                videoId: objProperties['videoid'],
+                playerVars: {
+                    //playlist: 'z1Ev1Z0cCG4,FG0fTKAqZ5g',
+                    autoplay: 1,
+                    controls: 0
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange' : onPlayerStateChange
+                }
+            });
+        }
+
+        //when youtube player is ready //event is also passed
+        function onPlayerReady(event){
+            console.log('youtube player is ready:' + event.data);
+            mrNext[0].disabled = true;
+            mrPrev[0].disabled = true;
+            //event.target.playVideo();
+        }
+        
+        //stateChange function - eg. play - stop - buffering - pause and so on
+        function onPlayerStateChange(event){
+            console.log('player state changed:' + event.data);
+
+            if(event.data == YT.PlayerState.ENDED){
+                mrNext[0].disabled = false;
+                mrPrev[0].disabled = false;
+            }
+        }
+    </script>
+</mrSubTemplate>    

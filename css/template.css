@@ -1,0 +1,848 @@
+/*
+ * 
+ * Giữ nguyên kích thước của box-sizing khi cộng thêm các atts padding
+ * 
+ * + không có tiền tố : dành cho trình duyệt IE8, Opera 7, Firefox và Google chrome bản mới
+ * + -webkit : dành cho Google Chrome bản cũ
+ * + -moz : dành cho Firefox bản cũ
+ * 
+ */
+/**{margin: 0; padding: 0; border: 0; vertical-align: baseline; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; 
+}*/
+
+body {
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+	line-height: 1.7em; 
+	color: #7f8c8d; 
+	font-size: 14px; 
+	font-family: Verdana, Arial, sans-serif;
+	vertical-align: baseline; 
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+a{text-decoration: none;}
+
+h1, h2, h3, h4, h5, h6, label{color: #34495e;}
+
+img {position: relative; z-index: 0; max-width: 100%; height: auto;}
+
+/*---------------------------------Container---------------------------------*/
+.container{position: relative; width: 100%; height: 100vh; overflow: hidden;}
+
+/*-----------------------Generalize----------------------*/
+/*-----------------------Header Wrapper----------------------*/
+.header_wrapper{
+	width: 100%;
+	height: 60px;
+	-moz-box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 6px 6px rgba(0,0,0,0.12);
+	-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 6px 6px rgba(0,0,0,0.12);
+	box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 6px 6px rgba(0,0,0,0.12);
+	background-color: #ffffff;
+}
+
+.header_wrapper_menu .header_wrapper_menu_fixed{
+	border-bottom: none;
+}
+
+.header_wrapper_menu .title{
+	color: white; 
+	text-decoration: none; 
+	font-weight: 400; 
+	font-size: 120%;
+}
+
+.header_wrapper_menu .logo{
+	float: left; 
+	background: #ffffff url(https://images1.ipsosinteractive.com/ABC_VIETNAM/templates/images/ipsos_gamechangers_banner.jpg) no-repeat left center; 
+	width: 260px; 
+	height: 60px;
+}
+
+.header_wrapper_menu .progressbar{
+	display: block;
+	width: 320px;
+	height: 10px;
+	margin: 5px 0 0 10px; 
+	margin: 0 auto;
+	border-radius: 5px;
+	-moz-box-shadow: inset 0 1.5px 1.5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 1.5px 1.5px rgba(0,0,0,0.5);
+	box-shadow: inset 0 1.5px 1.5px rgba(0,0,0,0.5);
+	background: #999;
+}
+
+
+/*-----------------------Content Wrapper----------------------*/
+.content_wrapper {
+	width:100%;
+	height: 100vh; /*Viewport Height (vh) - a percentage of the full viewport height*/
+}
+
+.content_wrapper .content {
+	height: -webkit-calc(100vh - 125px); /* Chrome, Safari */
+	height: -moz-calc(100vh - 125px); /* Firefox */
+	height: calc(100vh - 125px); /* IE9+ and future browsers */
+	word-wrap: break-word;
+	text-align: justify;
+	overflow: auto;
+}
+
+/*-----------------------Footer Wrapper----------------------*/
+.footer_wrapper{
+	position: fixed !important;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 0.5em 0 1.0em 0;
+	-moz-box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 -4px 8px rgba(0,0,0,0.24);
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 -4px 8px rgba(0,0,0,0.24);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 -4px 8px rgba(0,0,0,0.24);
+	background-color: #FFFFFF;
+	text-align: center;
+	border: 1px solid #f2f2f2;
+	color: white;
+}
+
+/*-----------------------Resetting default table styles----------------------*/
+table, caption, tbody, tfoot, thead, tr, th , td{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*font-size: 14px;*/
+	vertical-align: baseline;
+}
+
+table{
+	border-collapse: collapse; 
+	border-spacing: 0; 
+	width : 100%;
+	box-shadow: 0 0 0.5px rgba(0,0,0,0.15), 0 0.5px 0.5px rgba(0,0,0,0.15), 0px 0.5px 0.5px rgba(0,0,0,0.15), 0 0.5px 0.5px rgba(0,0,0,0.15);
+}
+	
+/*set a background-color on the table rows*/
+table thead tr{font-weight: bold; text-align: center; height: 26px;}
+
+table tbody tr:nth-child(odd){ background: #fdfdfd;}
+table tbody tr:hover{background: #f8f8f8;}
+table tbody tr td, th {padding: 0.25rem; border: 1px solid #e6e6e6;}
+
+.cellofheader, .row_expand_header, .column_expand_header{
+	padding: 0.25rem; 
+	background: #eee; 
+	border: 1px solid #f9f9f9;
+}
+
+.contentofheader{font-weight: bold; color: #2d3e50;}
+
+table.error{
+	display: inherit;
+}
+
+table.table_section {border-collapse: collapse; border : 1px solid #DdDdDd;}
+table.table_section > tbody > tr > td, th{border-collapse: collapse; border : 1px solid #DdDdDd;}
+
+.section{font-weight: bold; text-align:center;}
+.section_block{font-weight:bold; text-align:center; margin-top:20px;}
+.section_content{margin: 0 20px 0 20px; text-align:justify;}
+.section_text{display: block; margin: 20px; text-align: center;}
+
+.unit_style{padding-left: 10px;}
+
+/*--------------------Capture Template-------------------*/
+.cloudinary_fileupload_container{
+	position: relative;
+	width: 225px;
+}
+
+.cloudinary_fileupload_trigger{
+	display: block;
+	padding: 10px 0 10px 60px;
+	background: #39D2B4;
+	color: #fff;
+	font-size: 1em;
+	transition: all .4s;
+	cursor: pointer;
+}
+
+.cloudinary_fileupload{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 225px;
+	opacity: 0;
+	padding: 14px 0;
+	cursor: pointer;
+}
+
+.cloudinary_fileupload_progressbar{
+	width: 225px;
+}
+
+.thumbnails{
+	padding-top: 10px;
+	border-top: 3px solid #d2d2d2
+}
+
+.cloudinary_fileupload_trigger_disable{
+	display: block;
+	padding: 10px 0 10px 60px;
+	background: #39D2B4;
+	opacity: 0.6;
+	color: #fff;
+	font-size: 1em;
+	transition: all .4s;
+	cursor: not-allowed;
+}
+
+.cloudinary_fileupload_disable{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 225px;
+	opacity: 0;
+	padding: 14px 0;
+	cursor: not-allowed;
+}
+
+/*---------------------------Sub Template-------------------------*/
+.Categorical_DefaultIcons_namediv
+.OpenEnd_Basic_namediv
+.Information_namediv
+.Slider_Balance_namediv {
+	display: block;
+}
+
+.control_everything{display: block; padding: 10px 20px 10px 20px;}
+
+#question_name{display: block;}
+
+.question_banners{display: block;}
+.question_label{display: block; text-align: justify;padding-top:10px;padding-bottom:10px;}
+.question_controls{display: block;;padding-top:10px;padding-bottom:10px;}
+
+input[type="radio"], input[type="checkbox"]{
+	width: 20px;
+	margin-right: -40px;
+	padding: 0;
+	opacity: 0;
+}
+
+input[type="radio"] + label{
+	display: inline-block;
+	white-space: nowrap;
+	margin: 5px 0 5px 0;
+	padding-left: 20px;
+	/*padding: 0 0 20px 20px;*/
+	background: url(https://images1.ipsosinteractive.com/ABC_VIETNAM/templates/images/customRadio.png) no-repeat 0 0;
+	line-height: 20px;
+	/*border-bottom: 1px solid #f2f2f2;*/
+	cursor: pointer;
+}
+
+input[type="radio"] + label span{
+	display: inline-block;
+	white-space: normal;
+	text-align: justify;
+	background-color: white;
+	padding-left: 5px;
+}
+
+input[type="radio"] + label:hover {
+	color: #101010;
+	background-position: -20px 0;
+	/*
+	-moz-box-shadow: 0 4px 6px -3px #f2f2f2;
+	-webkit-box-shadow: 0 4px 6px -3px #f2f2f2;
+	box-shadow: 0 4px 6px -3px #f2f2f2;
+	*/
+}
+
+input[type="radio"]:checked + label {
+	background-position: -60px 0;
+	/*
+	-moz-box-shadow: 0 4px 6px -3px #f2f2f2;
+	-webkit-box-shadow: 0 4px 6px -3px #f2f2f2;
+	box-shadow: 0 4px 6px -3px #f2f2f2;
+	*/
+}
+
+input[type="checkbox"] + label{
+	display: inline-block;
+	white-space: nowrap;
+	margin: 5px 0 5px 0;
+	padding-left: 20px;
+	/*padding: 0 0 20px 20px;*/
+	background: url(https://images1.ipsosinteractive.com/ABC_VIETNAM/templates/images/customCheckbox.png) no-repeat 0 0;
+	line-height: 20px;
+	/*border-bottom: 1px solid #f2f2f2;*/
+	cursor: pointer;
+}
+
+input[type="checkbox"] + label span{
+	display: inline-block;
+	white-space: normal;
+	text-align: justify;
+	background-color: white;
+	padding-left: 5px;
+}
+
+input[type="checkbox"] + label:hover {
+	color: #101010;
+	background-position: -20px 0;
+	/*
+	-moz-box-shadow: 0 4px 6px -3px #f2f2f2;
+	-webkit-box-shadow: 0 4px 6px -3px #f2f2f2;
+	box-shadow: 0 4px 6px -3px #f2f2f2;
+	*/
+}
+
+input[type="checkbox"]:checked + label {
+	background-position: -60px 0;
+	/*
+	-moz-box-shadow: 0 4px 6px -3px #f2f2f2;
+	-webkit-box-shadow: 0 4px 6px -3px #f2f2f2;
+	box-shadow: 0 4px 6px -3px #f2f2f2;
+	*/
+}
+
+.categorical{
+	display: block;
+	padding: 5px 0 5px 0;
+	border-bottom: 1px dotted #e9e9e9;
+}
+
+.selected{
+	color: #101010;
+}
+
+/*----------------------------Slider Template-------------------------------*/
+/*Apply base CSS styles*/
+input[type="range"]{
+	-moz-appearance: none;
+	-webkit-appearance: none; /*Hides the slider so that that custom slider can be made*/
+	width: 100%;
+	background: transparent; /*Otherwise white in Chrome*/
+}
+
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance: none;
+}
+
+input[type="range"]:focus{
+	outline: none; /*Removes the blue border*/
+}
+
+input[type="range"]::-ms-track{
+	width: 100%;
+	cursor: pointer;
+
+	/*Hides the slider so custom styles can be added*/
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+
+/* Style the Thumb */
+/* Special styling for WebKit/Blink */
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	border: 1px solid #000000;
+	height: 36px;
+	width: 16px;
+	border-radius: 2px;
+	background: #ffffff;
+	cursor: pointer;
+	margin-top: -14px;
+	box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+}
+
+/* All the same stuff for Firefox */
+input[type="range"]::-moz-range-thumb{
+	box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+	border: 1px solid #000000;
+	height: 36px;
+	width: 16px;
+	border-radius: 3px;
+	background: #ffffff;
+	cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type="range"]::-ms-thumb{
+	box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+	border: 1px solid #000000;
+	height: 36px;
+	width: 16px;
+	border-radius: 3px;
+	background: #ffffff;
+	cursor: pointer;
+}
+
+/* Style the Track */
+input[type="range"]::-webkit-slider-runnable-track{
+	width: 100%;
+	height: 8.4px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+	background: #3071a9;
+	border-radius: 1.3px;
+	border: 0.2px solid #010101;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track{
+	background: #367ebd;
+}
+
+input[type="range"]::-moz-range-track{
+	width: 100%;
+	height: 8.4px;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+	background: #3071a9;
+	border-radius: 1.3px;
+	border: 0.2px solid #010101;
+}
+
+input[type="range"]::-ms-track{
+	width: 100%;
+	height: 8.4px;
+	cursor: pointer;
+	background: transparent;
+	border-color: transparent;
+	border-width: 16px 0;
+	color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower{
+	background: #2a6495;
+	border: 0.2px solid #010101;
+	border-radius: 2.6px;
+	box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+}
+
+input[type="range"]:focus::-ms-fill-lower{
+	background: #3071a9;
+}
+
+input[type="range"]::-ms-fill-upper{
+	background: #3071a9;
+	border:  0.2px solid #010101;
+	border-radius: 2.6px;
+	box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+}
+
+input[type="range"]:focus::-ms-fill-upper{
+	background: #367ebd;
+}
+
+table.slider_balance{width: 80%; margin: auto;}
+table.slider_balance td{padding: 10px;}
+
+table.slider_balance td span{
+	display: inline-block;
+	border: 1px solid #dbdbdb;
+	box-shadow: 1px 1px 1px 0 #dbdbdb;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 4px;
+	text-align: center;
+}
+
+table.slider_balance.point{width: 100%; text-align: center;}
+
+/*----------------------------------------------------------------------------*/
+.textbox {
+	box-sizing: border-box;
+	padding: 12px;
+	margin: 0;
+	width: 100%;
+	color: #5f5f5f;
+	-moz-box-shadow: inset 0 1.5px 1.5px rgba(100,100,100,0.2), 0 1.5px 1.5px rgba(255,255,255,0.2);
+	-webkit-box-shadow: inset 0 1.5px 1.5px rgba(100,100,100,0.2), 0 1.5px 1.5px rgba(255,255,255,0.2);
+	box-shadow: inset 0 1.5px 1.5px rgba(100,100,100,0.2), 0 1.5px 1.5px rgba(255,255,255,0.2);
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+} 
+
+.textbox_with_label{
+	box-sizing: border-box;
+	padding: 12px;
+	margin: 0;
+	width: 80%;
+	color: #5f5f5f;
+	-moz-box-shadow: inset 0 1.5px 1.5px rgba(100,100,100,0.2), 0 1.5px 1.5px rgba(255,255,255,0.2);
+	-webkit-box-shadow: inset 0 1.5px 1.5px rgba(100,100,100,0.2), 0 1.5px 1.5px rgba(255,255,255,0.2);
+	box-shadow: inset 0 1.5px 1.5px rgba(100,100,100,0.2), 0 1.5px 1.5px rgba(255,255,255,0.2);
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+}
+
+input[type="text"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder{
+	/* Chrome/Opera/Safari */
+	color: #ebebe0; 
+}
+
+input[type="text"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder{
+	/* Firefox 19+ */
+	color: #ebebe0; 
+}
+
+input[type="text"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder{
+	/* IE 10+ */
+	color: #ebebe0; 
+}
+
+input[type="text"]:-moz-placeholder,
+input[type="email"]:-moz-placeholder{
+	/* Firefox 18- */
+	color: #ebebe0; 
+}
+
+.textarea {
+	box-sizing: border-box;
+	padding: 12px;
+	margin: 0;
+	color: #5f5f5f;
+	width: 100%;
+	height: 80px;
+	-moz-box-shadow: inset 0 1.5px 1.5px rgba(100,100,100,0.2), 0 1.5px 1.5px rgba(255,255,255,0.2);
+	-webkit-box-shadow: inset 0 1.5px 1.5px rgba(100,100,100,0.2), 0 1.5px 1.5px rgba(255,255,255,0.2);
+	box-shadow: inset 0 1.5px 1.5px rgba(100,100,100,0.2), 0 1.5px 1.5px rgba(255,255,255,0.2);
+	border: 1px solid #dbdbdb;
+	resize: vertical;
+}
+
+textarea::-webkit-input-placeholder{
+	/* Chrome/Opera/Safari */
+	color: #ebebe0; 
+}
+
+textarea::-moz-placeholder{
+	/* Firefox 19+ */
+	color: #ebebe0; 
+}
+
+textarea:-ms-input-placeholder{
+	/* IE 10+ */
+	color: #ebebe0; 
+}
+
+textarea:-moz-placeholder{
+	/* Firefox 18- */
+	color: #ebebe0; 
+}
+
+select{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	-moz-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	padding: 8px 10px 8px 10px;
+	border: 1px solid #dbdbdb;
+	max-width: 240px;
+	outline: none;
+}
+
+.box_label{
+	width: 200px;
+	height: 26px;
+	padding: 3px 10px;
+	margin: 8px 12px;
+	display: inline-block;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	background-color: #f2f2f2;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.box_select_date,
+.box_select_time{
+	display: inline-block;
+	margin: 2px 10px 2px 10px;
+}
+
+.box_option{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	-moz-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	padding: 8px 10px 8px 10px;
+	border: 1px solid #dbdbdb;
+	outline: none;
+}
+
+/*
+ * METADATA
+ */
+
+.mrQuestionTable {
+	display: block;
+	/*margin: 0px 10px 10px 10px*/;
+	/*padding: 0px;
+	margin: auto;
+	min-width: 200px;
+	border: 1px solid blue;
+	border-collapse: collapse;*/
+}
+
+.mrQuestionText{
+	display: inherit;
+	text-align: justify;
+	color: #2d3e50;
+}
+
+.mrShowText{
+	line-height: 30px;
+	font-weight: bold;
+	color: #666666;
+}
+
+.mrSingle{
+	display: inline-block;
+	clear: both;
+}
+
+.mrMultiple{
+	display: inline-block;
+	clear: both;
+}
+
+.mrSingleText{
+	display: inline-block;
+}
+
+.mrMultipleText {
+	display: inline-block;
+}
+
+.mrErrorText {
+	display: inline-block;
+}
+
+.mrGridQuestionText{
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mrNext, .mrPrev, .mrStop, .btnTop {
+	-moz-appearance: button;
+	-webkit-appearance: button;
+	display: inline-block;
+	border-radius: 2px;
+	background-color: #047AA8;
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 18px;
+	-moz-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	-o-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	border: none;
+	padding: 10px;
+	margin: auto;
+	transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	cursor: pointer;
+}
+
+
+.rwd_break{
+	display: block;
+}
+
+.slideshow_container{
+	margin: 20px;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+}
+
+.slide{
+	display: none;
+}
+
+.video_wrapper{
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+
+.video_wrapper iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* START IMAGE MODAL */
+
+#current_image:hover{
+	opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 100%;
+	/*max-width: 700px;*/
+}
+
+/* Caption of Modal Image */
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+	.modal-content {
+		width: 100%;
+	}
+}
+
+/* END IMAGE MODAL */
+
+@media only screen and (min-width: 600px){
+	/*For tablets*/
+
+	body{
+		font-size: 14px;
+	}
+	
+	.header_wrapper{
+		text-align: center;
+	}
+	
+	.footer_wrapper{
+		text-align: center;
+	}
+	
+	.header_wrapper_progressbar{
+		width: 320px;
+		height: 10px;
+	}
+	
+	table{
+		width: 100%;
+	}
+
+	.textbox,
+	.textbox_with_label{
+		margin: 5px 14px 5px 14px;
+		width: 240px;
+	}
+
+	.mrErrorText {
+		color:red
+	}
+	
+	.textarea {
+		width: 420px;
+	}
+
+	.rwd_break{
+		display: inline;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	/*For desktop*/
+
+	body{
+		font-size: 14px;
+	}
+	
+	table{
+		width: 100%;
+	}
+
+	.textbox,
+	.textbox_with_label{
+		margin: 5px 14px 5px 14px;
+		width: 240px;
+	}
+
+	.textarea {
+		width: 550px;
+	}
+
+	.rwd_break{
+		display: inline;
+	}
+}
