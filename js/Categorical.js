@@ -268,9 +268,7 @@ $(document).ready(function(){
                 $error.hide();
             }
         }
-
-
-        
+                    
         /*
         var $cat_group = $(this).parent();
         

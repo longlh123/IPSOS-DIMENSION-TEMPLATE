@@ -1,0 +1,63 @@
+<mrSubTemplate>
+  <mrRef RefType="script" RefPosition="head" type="text/javascript" language="javascript" src="https://images1.ipsosinteractive.com/ABC_VIETNAM_10072020/source_ipsos/js/Shelf.js"><!--CONJOINT CLASS--></mrRef>
+
+  <div class='shelf-container'>
+    <canvas id="shelfCanvas" width="960" height="600" class="photocard"></canvas>
+    <div class="shelf-footer">
+      <div class="item1">
+        <button type='button' id="btnTotalBurget">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </button>
+        <span class="total_burget" id="txtTotalBurget">0.000 VND</span>
+      </div>
+      <div class="item2">
+        <button type='button' id="zoomIn">
+          <i class="fa fa-search-plus" aria-hidden="true"></i>
+        </button>
+        <button type='button' id="zoomOut">
+          <i class="fa fa-search-minus" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <mrData QuestionElement='Banner'></mrData>
+    <mrData QuestionElement='Error' ShowErrors='TopMost'></mrData>
+    <mrData QuestionElement='Label'></mrData>
+    <mrData QuestionElement='Controls'></mrData>
+  </div>
+  <!-- Modal Overlay -->
+  <div id="shelf-overlay"></div>
+
+  <!-- Modal Content -->
+  <div id="shelf-modal">
+    <div class="shelf-wrapper">
+      <div id="shelf-image"></div>
+      <div id="shelf-content">
+        <div id="shelf-info-name">Ten san pham</div>
+        <div id="shelf-info-volume">Dung tich</div>
+        <div id="shelf-info-price">Don gia</div>
+        <div id="shelf-info-amount">
+          <label for="txtAmount">Số lượng:</label> 
+          <input type="number" id="txtAmount" value="0" min="0" max="100" /> 
+        </div>
+      </div>
+    </div>
+    <div class="shelf-footer">
+      <button type='button' id="btnSelected">CHỌN</button>
+      <button type='button' id="btnClose1">ĐÓNG</button>
+    </div>
+  </div>
+
+  <!-- Modal Shopping Cart -->
+  <div id="shopping-cart-modal">
+    <div class="shopping-cart-header">
+      SHOPPING CART
+    </div>
+    <div class="shopping-cart-wrapper">
+      <!-- You can add more products here -->
+    </div>
+    <div class="shopping-cart-footer">
+      <button type="button" id="btnVerified">XÁC NHẬN</button>
+      <button type='button' id="btnClose2">ĐÓNG</button>
+    </div>
+  </div>
+</mrSubTemplate>

@@ -84,8 +84,16 @@ class Conjoint{
                 buttonHTML.classList.add("btn-selected");
             }
 
+            let txtControlHTML = objHTML.template("<div style='display: flex; align-items:center'></div>");
+            
+            let title = attr.querySelectorAll('.conjoint_title')[0].textContent
+            attr.querySelectorAll('.conjoint_title')[0].remove();
+
+            txtControlHTML.appendChild(objHTML.template("<span style='white-space: pre-wrap; margin-right:10px;'>" + title + "</span>"));
+            txtControlHTML.appendChild(attr.nextElementSibling);
+
             attrControlHTML.appendChild(buttonHTML)
-            attrControlHTML.appendChild(attr.nextElementSibling);
+            attrControlHTML.appendChild(txtControlHTML);
             
             let txt1s =  attr.querySelectorAll('.alias_name')[0].innerHTML.replace('\t\t\t\t\t\t\t\t\t\t\t','').replace('\n','').split("###,");
             
@@ -122,7 +130,6 @@ class Conjoint{
                 }
             }
             
-
             //let attAliasNameHTML = objHTML.template("<div class='alias_name'>" +  attr.querySelectorAll('.alias_name')[0].textContent + "</div>")
             let attAliasNameHTML = objHTML.template("<div class='alias_name'>" +  txt1_content.replace("###", "") + "</div>");
             attr.querySelectorAll('.alias_name')[0].remove();

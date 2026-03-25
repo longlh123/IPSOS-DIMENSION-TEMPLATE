@@ -1,0 +1,8 @@
+images/
+old/
+
+*.mdd
+*.ddf
+*.tmp.ivs
+*.zip
+*.lmd

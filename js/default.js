@@ -102,6 +102,14 @@ document.addEventListener("DOMContentLoaded", function(event){
                 //mrNext.disabled = (divContent.scrollHeight > divContent.clientHeight);
             }
         }
+
+        var dropdown_item = document.getElementsByClassName("dropdown-list");
+
+        if(dropdown_item != undefined){
+            mrNext.disabled = true;
+            mrPrev.disabled = true;
+        }
+
         if(duel_container != undefined){
             mrNext.disabled = true;
             mrPrev.disabled = true;

@@ -1,0 +1,28 @@
+<mrSubTemplate>
+  <mrRef RefType="script" RefPosition="head" type="text/javascript" language="javascript" src="https://images1.ipsosinteractive.com/ABC_VIETNAM_10072020/source_ipsos/js/RefrigeShelf.js"><!--CONJOINT CLASS--></mrRef>
+
+  <div id="loading-screen">
+    <div id="loading-text">Đang tải hình ảnh...</div>
+  </div>
+  <div class='shelf-container'>
+    <canvas id="shelfCanvas" width="960" height="600" class="photocard"></canvas>
+    <mrData QuestionElement='Banner'></mrData>
+    <mrData QuestionElement='Error' ShowErrors='TopMost'></mrData>
+    <mrData QuestionElement='Label'></mrData>
+    <mrData QuestionElement='Controls'></mrData>
+  </div>
+  <!-- Modal Overlay -->
+  <div id="shelf-overlay"></div>
+
+  <!-- Modal Content -->
+  <div id="shelf-modal">
+    <div class="shelf-wrapper">
+      <div id="shelf-image"></div>
+      <div id="shelf-product-info"></div>
+    </div>
+    <div class="shelf-footer">
+      <button type='button' id="btnSelected">CHỌN</button>
+      <button type='button' id="btnClose">ĐÓNG</button>
+    </div>
+  </div>
+</mrSubTemplate>
