@@ -1,4 +1,4 @@
-# IPSOS DIMENSION TEMPLATE
+# IPSOS DIMENSION TEMPLATE 1
 
 Tổng hợp các template HTML dùng trong hệ thống khảo sát Ipsos Dimensions (Confirmit/Forsta).  
 Mỗi template là một `mrSubTemplate` được nhúng vào file layout chính (`index.html`).
