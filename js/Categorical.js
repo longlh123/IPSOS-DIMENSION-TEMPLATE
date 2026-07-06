@@ -17,6 +17,7 @@ $(document).ready(function(){
     var iscensydiam_template = false;
 
     var iscatimages = $('.content').find('.categorical_imagineicons').length == 1;
+    var iscathorizontal = $('.content').find('.categorical_horizontal').length == 1;
 
     console.log(iscatimages);
 
@@ -32,6 +33,8 @@ $(document).ready(function(){
 
             if(iscatimages){
                 $(".mrQuestionTable").addClass('cat-image-container');
+            } else if(iscathorizontal){
+                $(".mrQuestionTable").addClass('cat-horizontal-container');
             } else {
                 $(".mrQuestionTable").addClass('cat-container');
             }
@@ -79,6 +82,8 @@ $(document).ready(function(){
                 } else {
                     $(".mrQuestionTable").addClass('cat-image-container');
                 }
+            } else if(iscathorizontal){
+                $(".mrQuestionTable").addClass('cat-horizontal-container');
             } else {
                 $(".mrQuestionTable").addClass('cat-container');
             }

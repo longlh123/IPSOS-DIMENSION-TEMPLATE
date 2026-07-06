@@ -39,12 +39,18 @@ body{
 }
 
 /* fonts */
+.progressbar{
+    display: block;
+    height: 100%;
+}
+
 .header{
-    height: 10px;
+    height: 30px;
     width: 100vw;
     position: absolute;
     top: 0px;
     border-bottom: 1px solid #a6a6a6;
+    overflow: hidden;
 }
 
 .footer{
@@ -61,7 +67,7 @@ body{
 .content{
     width: 100vw;
     position: absolute;
-    top: 10px;
+    top: 30px;
     bottom: 70px;
     overflow-y: auto;
     padding: 15px 15px;
@@ -382,6 +388,70 @@ input[type="range"]::-moz-range-thumb {
 	margin: 10px;
 }
 
+/* NPS Slider */
+.nps-slider-container {
+	padding: 10px 5px;
+}
+
+.nps-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 5px;
+}
+
+.nps-value-display {
+	min-height: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nps-value {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.2em;
+	height: 2.2em;
+	border-radius: 50%;
+	background-color: #047AA8;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 700;
+}
+
+.nps-track-wrapper {
+	width: 100%;
+}
+
+.nps-input {
+	width: 100%;
+}
+
+.nps-end-labels {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.nps-label-left {
+	flex: 1;
+	font-size: 0.8rem;
+	color: #6f6e6e;
+	font-style: italic;
+	text-align: left;
+}
+
+.nps-label-right {
+	flex: 1;
+	font-size: 0.8rem;
+	color: #6f6e6e;
+	font-style: italic;
+	text-align: right;
+}
+
 .range-image, 
 .range-title{
 	text-align: center;
@@ -514,6 +584,81 @@ input[type="range"]::-moz-range-thumb {
 	grid-template-columns: 1fr;
 	align-items: center;
 	padding: 10px 10px;
+}
+
+/* Horizontal Categorical: label on top, radio button below */
+.cat-horizontal-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: stretch; /* tất cả cat-group cùng chiều cao */
+	padding: 10px;
+	flex-wrap: nowrap;
+}
+
+.cat-horizontal-container .cat-group {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	min-width: 50px;
+	text-align: center;
+}
+
+.cat-horizontal-container .cat-group input[type="radio"] + label,
+.cat-horizontal-container .cat-group input[type="checkbox"] + label {
+	display: flex;
+	flex-direction: column-reverse; /* ::before (radio) xuống dưới, span (text) lên trên */
+	align-items: center;
+	justify-content: space-between; /* text bám trên cùng, radio bám dưới cùng */
+	width: 100%;
+	flex: 1;
+	padding: 4px 2px;
+}
+
+.cat-horizontal-container .cat-group input[type="radio"] + label > span,
+.cat-horizontal-container .cat-group input[type="checkbox"] + label > span {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1; /* chiếm toàn bộ chiều cao còn lại phía trên radio */
+	width: 100%;
+	font-size: 0.875rem;
+	text-align: center;
+	word-break: break-word;
+}
+
+/* Khi dùng cấu trúc cat-items (text + image) */
+.cat-horizontal-container .cat-items {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	width: 100%;
+}
+
+.cat-horizontal-container .cat-item:first-child {
+	flex: 1; /* hàng text: lấy hết phần còn lại */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.cat-horizontal-container .cat-item + .cat-item {
+	flex: none;
+	height: 3.5em; /* hàng icon: chiều cao cố định → luôn canh hàng */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	font-size: 30px;
+}
+
+.cat-horizontal-container .cat-group input[type="radio"]:checked + label,
+.cat-horizontal-container .cat-group input[type="checkbox"]:checked + label {
+	color: #047AA8;
+	font-weight: 600;
 }
 
 /* categorical image new */

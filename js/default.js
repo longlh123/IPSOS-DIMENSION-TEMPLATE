@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", function(event){
         var dropdown_item = document.getElementsByClassName("dropdown-list");
 
         if(dropdown_item != undefined){
-            mrNext.disabled = true;
-            mrPrev.disabled = true;
+            mrNext.disabled = false;
+            mrPrev.disabled = false;
         }
 
         if(duel_container != undefined){

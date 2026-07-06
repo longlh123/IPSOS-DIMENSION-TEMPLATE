@@ -122,7 +122,15 @@ $(document).ready(function(){
 
             if($textbox != null)
             {
-                $textbox.attr('placeholder', objProperties[id]['placeholder']);
+                // $textbox.attr('placeholder', objProperties[id]['placeholder']);
+
+                var lang = $('html').attr('lang').toLowerCase();
+
+                if(lang == "vi-vn"){
+                    $textbox.attr('placeholder', "Nhập câu trả lời...");
+                } else {
+                    $textbox.attr('placeholder', "Enter your answer...");
+                }
 
                 if(Object.keys(objProperties[id]['dataset']).length > 0){
                     for(const[key, value] of Object.entries(objProperties[id]['dataset'])){
@@ -228,7 +236,13 @@ $(document).ready(function(){
             
             if($select != null)
             {
-                $select.append('<option value="" disabled="disabled" selected>Chọn câu trả lời...</option>');
+                var lang = $('html').attr('lang').toLowerCase();
+
+                if(lang == "vi-vn"){
+                    $select.append('<option value="" disabled="disabled" selected>Chọn câu trả lời...</option>');
+                } else {
+                    $select.append('<option value="" disabled="disabled" selected>Select an answer...</option>');
+                }
             }
         }
     });

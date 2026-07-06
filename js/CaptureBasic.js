@@ -71,7 +71,7 @@ $(document).ready(function(){
         } else if($(this).prop('class') == "capture_container"){
             if(count == 5){
                 //capture='camera'
-                $(this).append("<div class = 'cloudinary_fileupload_container'><input type='file' name='file' accept = 'image/*' class ='cloudinary_fileupload' /><label for = 'cloudinary_fileupload' class = 'cloudinary_fileupload_trigger'>Choose an image to upload (.PNG, .JPG)..</label><progress max = '100' value = '0' class = 'cloudinary_fileupload_progressbar'></progress></div><br></br><div class='thumbnails'></div>");
+                $(this).append("<div class = 'cloudinary_fileupload_container'><input type='file' name='file' accept = 'image/*,video/*' class ='cloudinary_fileupload' /><label for = 'cloudinary_fileupload' class = 'cloudinary_fileupload_trigger'>Choose an image to upload (.PNG, .JPG)..</label><progress max = '100' value = '0' class = 'cloudinary_fileupload_progressbar'></progress></div><br></br><div class='thumbnails'></div>");
 
                 if($('input:text').val().length > 0)
                 {
@@ -103,7 +103,11 @@ $(document).ready(function(){
                                     });
 
                 $('.cloudinary_fileupload').unsigned_cloudinary_upload("ctjzx6so", {cloud_name : CLOUDINARY_NAME, 
-                                                                                    public_id  : imagename + ($('.thumbnails').children().length == 0 ? "" : "_" + ($('.thumbnails').children().length + 1).toString()), 
+                                                                                    public_id  : imagename + 
+                                                                                                    "_" +
+                                                                                                    Date.now() +
+                                                                                                    "_" +
+                                                                                                    Math.floor(Math.random() * 10000), 
                                                                                     tags       : projectname,
                                                                                     folder     : projectname},
                     {multiple: false}).bind('cloudinarydone', function(e, data){
