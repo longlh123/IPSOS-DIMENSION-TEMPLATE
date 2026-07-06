@@ -3,8 +3,6 @@
 Tổng hợp các template HTML dùng trong hệ thống khảo sát Ipsos Dimensions (Confirmit/Forsta).  
 Mỗi template là một `mrSubTemplate` được nhúng vào file layout chính (`index.html`).
 
-THANGTRAN
-
 ---
 
 ## Cấu trúc thư mục
